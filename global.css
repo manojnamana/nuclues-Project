@@ -226,14 +226,11 @@ a.sidebar-link:hover {
   .nav-btn:hover{
     color:#512467;
     transition:0.3s;
+    text-decoration:underline;
     
 
   }
 
-  .dropdown-btn:hover{
-    color:white;
-    background-color:#af5a86
-  }
   span{
     font-weight:100;
     font-size:15px;
