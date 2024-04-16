@@ -219,19 +219,16 @@ display: block;
 
 
 .dropdown-btn{
-background-color:#b3dff7;
+background-color:#F7F9FA;
 border-style:solid;
 border-width:1px;
 border-color:#e2edef;
 font-weight:bold;
 }
 
-.dropdown-content{
-background-color:#f2f5f8;
-}
 
 .hovering:hover{
-background-color:#d0d4d8;
+background-color:#D1D7DC;
 width:100%;
 transition:0.3s
 }
