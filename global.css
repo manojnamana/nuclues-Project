@@ -52,7 +52,7 @@ width: 70px;
 min-width: 70px;
 z-index: 1000;
 transition: all .3s ease-out; /* Add ease-out transition */
-background-color:white;
+background-color:black;
 display: flex;
 flex-direction: column;
 }
@@ -68,13 +68,9 @@ min-width: 260px;
 background-color: transparent;
 cursor: pointer;
 border: 0;
-padding: 1rem 1.5rem;
+padding: 1rem 1rem;
 }
 
-.toggle-btn i {
-font-size: 1.5rem;
-color: #FFF;
-}
 
 .sidebar-logo {
 margin: auto 0;
@@ -92,7 +88,7 @@ padding:10px;
 }
 
 .sidebar-nav {
-padding: 2rem 0;
+  padding :0 0;
 flex: 1 1 auto;
 
 }
@@ -109,10 +105,10 @@ border-left: 3px solid transparent;
 .sidebar-link i {
 font-size: 1.1rem;
 margin-right: .75rem;
-color:black;
+color:white;
 }
 .sidebar-link span {
-color:black;
+color:white;
 }
 
 .sidebar-item {
@@ -123,6 +119,7 @@ position: relative;
 .sidebar-item:hover .sidebar-link {
 background-color: #007bff; /* Primary color */
 color: #fff; /* White text */
+border-radius:5px;
 }
 
 /* White color for icon */
