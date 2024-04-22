@@ -62,32 +62,29 @@
     <div class="main p-3 ">
       <div>
         <a href="/home.html">
-          <button class="bg-transparent" 
-        style="border-width: 1px;
-         border-top-right-radius: 10px; border-bottom-left-radius: 10px;
-          border-bottom-right-radius: 6px; border-top-left-radius: 6px;">
-         Home
+          <button class="hovered p-2"
+         style=" border-width: 0px; border-radius: 5px;">
+         HOME
         </button>
       </a>
       <a href="/subjects.html">
-        <button class="bg-transparent" 
-      style="border-width: 1px;
-       border-top-right-radius: 10px; border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 6px; border-top-left-radius: 6px;">
-       Medicine
+        <button class="hovered p-2" 
+      style="border-width: 0px;
+      border-radius: 5px;">
+       SUBJECTS
       </button>
     </a>
       </div>
             <div class="d-flex justify-content-center mb-4 adjustSmallscreen" style="align-items: center;">
-        <h1>Topics</h1>
+        <h1>Medicine Topics</h1>
         
         </div>
             <div class="container">
                 <div class="row">
                   <div class="col-12 col-lg-6 mb-3">
-                    <div class="card shadow p-3">
+                    <div class="card shadow p-3 hovered">
                       <a href="/MCQPage/mcq.html" style="color:black;">
-                      <div class="d-flex justify-content-between">
+                      <div class="d-flex justify-content-between hovered">
                         <div class="d-flex">
                         <p> <strong > Topic 1 : Vasculitis  </strong><br/>
                           0/3 | Sub Topics </p>
@@ -99,11 +96,11 @@
                     </a>
                     </div>
                   </div>
-                  <div class="col-12 col-lg-6 mb-3">
-                    <div class="card shadow p-3">
+                  <div class="col-12 col-lg-6 mb-3 ">
+                    <div class="card shadow p-3 hovered">
                       <a href="#" style="color:black;">
-                      <div class="d-flex justify-content-between">
-                        <div class="d-flex">
+                      <div class="d-flex justify-content-between hovered">
+                        <div class="d-flex hovered">
                         <p> <strong >Topic 2 : Arrythmias</strong><br/>
                           0/5 | Sub Topics </p>
                         </div>
@@ -115,9 +112,9 @@
                     </div>
                   </div>
                   <div class="col-12 col-lg-6 mb-3">
-                    <div class="card shadow p-3">
+                    <div class="card shadow p-3 hovered">
                       <a href="#" style="color:black;">
-                      <div class="d-flex justify-content-between">
+                      <div class="d-flex justify-content-between hovered">
                         <div class="d-flex">
                         <p> <strong >Topic 3 : Pitutary tumours</strong><br/>
                           0/6 | Sub Topics </p>
@@ -130,9 +127,9 @@
                     </div>
                   </div>
                   <div class="col-12 col-lg-6 mb-3">
-                    <div class="card shadow p-3">
+                    <div class="card shadow p-3 hovered">
                       <a href="#" style="color:black;">
-                      <div class="d-flex justify-content-between">
+                      <div class="d-flex justify-content-between hovered">
                         <div class="d-flex">
                         <p> <strong >Topic 4 : Cardiovascular System – Diagnos</strong><br/>
                           0/4 | Sub Topics </p>
@@ -145,9 +142,9 @@
                     </div>
                   </div>
                   <div class="col-12 col-lg-6 mb-3">
-                    <div class="card shadow p-3">
+                    <div class="card shadow p-3 hovered">
                       <a href="#" style="color:black;">
-                      <div class="d-flex justify-content-between">
+                      <div class="d-flex justify-content-between hovered">
                         <div class="d-flex">
                         <p> <strong >Topic 5 : Complications of Diabetes </strong><br/>
                           0/6 | Sub Topics </p>
@@ -160,9 +157,9 @@
                     </div>
                   </div>
                   <div class="col-12 col-lg-6 mb-3">
-                    <div class="card shadow p-3">
+                    <div class="card shadow p-3 hovered">
                       <a href="#" style="color:black;">
-                      <div class="d-flex justify-content-between">
+                      <div class="d-flex justify-content-between hovered">
                         <div class="d-flex">
                         <p> <strong >Topic 6 : Ischemic Heart Disease</strong><br/>
                           0/9 | Sub Topics </p>
@@ -182,8 +179,8 @@
         
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script>
+       document.querySelector("#sidebar").classList.add("expand");
         const hamBurger = document.querySelector(".toggle-btn");
-    
     hamBurger.addEventListener("click", function () {
         document.querySelector("#sidebar").classList.toggle("expand");
         setTimeout(function () {

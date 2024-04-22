@@ -132,8 +132,8 @@
         crossorigin="anonymous"></script>
 
 <script>
+     document.querySelector("#sidebar").classList.add("expand");
     const hamBurger = document.querySelector(".toggle-btn");
-
     hamBurger.addEventListener("click", function () {
         document.querySelector("#sidebar").classList.toggle("expand");
         setTimeout(function () {

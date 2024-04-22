@@ -64,16 +64,27 @@
       </li>
   </aside>
     <div class="main">
+      <div class="">
+        <a href="/subjects.html">
+          <button class="hovered p-2 mb-0 m-5" 
+        style="border-width: 0px;
+        border-radius: 5px;">
+         SUBJECTS
+        </button>
+      </a>
+      </a>
+        </div>
       <div class="container">
+
         <div class="row d-flex justify-content-center">
-          <div class="col-12 col-md-10">
-            <div class="d-flex justify-content-between shadow mt-3">
-              <button class="btn">
-                <i class="bi bi-arrow-left-circle-fill" style="color:#0d6efd; width:26px; height:26px; font-weight:600;"></i>
+          <div class="col-12 col-md-9 col-lg-10">
+            <div class="d-flex justify-content-between shadow mt-3 p-2 pb-1" style="align-items: center;"> 
+              <button class="hovered mt-1 p-2 hovered btn mb-2" style="width:100px; border-color: rgb(227, 227, 227);">
+                Prev
               </button>
-              <p class="pt-3">Question 1 of 20 </p>
-              <button class="btn">
-                <i class="bi bi-arrow-right-circle-fill" style="color:#0d6efd; width:26px; height:26px; font-weight:600;"></i>
+              <p class="pt-1">Question 1 of 20 </p>
+              <button  class="mt-1 mb-2 hovered btn p-2 text-center" style= "width:100px; border-color: rgb(227, 227, 227);">
+                Next
               </button>
             </div>
             <p class="pt-3" >Which one of the following would cause a rise in the carbon monoxide transfer factor (TLCO)? </p>
@@ -96,8 +107,8 @@
             <button type="submit" class="btn btn-primary mt-4">Submit answer</button>
             
 
-              <div class="popover mt-4">
-                <button class="popover-btn btn "><i class="bi bi-bookmark"></i> Bookmark</button>
+              <div class="popover mt-4 ">
+                <button class="popover-btn btn hovered"><i class="bi bi-bookmark "></i> Bookmark</button>
                 <div class="popover-content">
                   <ul>
                     <li data-value="go">Important</li>
@@ -116,9 +127,9 @@
 
       <div class="conatiner">
         <div class="row d-flex justify-content-center">
-          <div class=" col-12 col-md-9 card mt-5 mb-5">
+          <div class=" col-12 col-md-11 col-lg-9 card mt-5 mb-5">
           <div class="navbar d-flex justify-content-around">
-            <button class="nav-btn" data-target="notes">Notes</button>
+            <button class="nav-btn " data-target="notes">Notes</button>
             <button class="nav-btn" data-target="overview">Overview</button> 
             <button class="nav-btn" data-target="Discussions">Discussions</button>
             <button class="nav-btn" data-target="Resources">Resources</button>
@@ -181,39 +192,56 @@
           
             <div id="Discussions" class="content text-center p-5">
               <div class="container mt-4">
-                <!-- Topic Header -->
+                
                 <div class="topic-header">
                   <h1>Medicine Discussions</h1>
                   <p>Join the conversation about the latest trends and developments in medicine!</p>
                 </div>
-                <!-- Comments Section -->
+                
                 <div class="comments-section">
-                  <!-- Comment 1 -->
+                  
                   <div class="comment">
                     <p class="user">John Doe</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula aliquam eros, eu vehicula lorem ultrices quis. Nullam vel nulla nec ante sodales mollis nec non neque.</p>
                     <p class="timestamp">Posted: April 17, 2024</p>
                   </div>
-                  <!-- Comment 2 -->
+                  
                   <div class="comment">
                     <p class="user">Jane Smith</p>
                     <p>Suspendisse potenti. Nunc lacinia hendrerit turpis, nec lobortis nunc finibus nec. Sed ac justo at nisi auctor accumsan.</p>
                     <p class="timestamp">Posted: April 16, 2024</p>
                   </div>
-                  <!-- Add your comment form -->
+                  
                   <form class="mt-4">
                     <div class="form-group">
                       <label for="comment">Join the discussion:</label>
                       <textarea class="form-control" id="comment" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Post Comment</button>
+                    <button type="submit" class="btn btn-primary mt-3">Post Comment</button>
                   </form>
                 </div>
               </div>
             </div>
           
             <div id="Resources" class="content text-center p-5">
-              <h2>This Is Resources</h2>
+              <div class="container">
+                <div class="row">
+                  <div class="col-12  mb-3 ">
+                    <div class="card shadow p-3  hovered">
+                      <div class="d-flex justify-content-between hovered" style="align-items: center;">
+                        <div class="d-flex flex-column text-start">
+                        <p><strong>Textbook of surgery :</strong> The biological basis of modern surgical practice 21st Edition </p>
+                        <p><strong>Authors : </strong> TOWNSEND
+                          BEAUCHAMP, EVERS, MATTOX | <strong>Pages :</strong> 2197</p>
+                        </div>
+                          <div>
+                            <i class="bi bi-chevron-right" style="color:grey;"></i>
+                          </div>  
+                        </div>
+                    </div>
+                  </div>
+                    </div>
+                  </div>
             </div>
           
             <div id="learning-tools" class="content text-center p-5">
@@ -231,6 +259,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
   
   <script>
+     document.querySelector("#sidebar").classList.add("expand");
     const hamBurger = document.querySelector(".toggle-btn");
     hamBurger.addEventListener("click", function () {
       document.querySelector("#sidebar").classList.toggle("expand");
@@ -253,16 +282,6 @@
     <script>
 
 
-    document.addEventListener("DOMContentLoaded", function() {
-  const dropdownBtns = document.querySelectorAll('.dropdown-btn');
-
-  dropdownBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      const dropdownContent = this.nextElementSibling;
-      dropdownContent.classList.toggle('show');
-    });
-  });
-});
 
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('notes').classList.add('active');
