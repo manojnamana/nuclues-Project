@@ -66,10 +66,10 @@
     <div class="main">
       <div class="">
         <a href="/subjects.html">
-          <button class="hovered p-2 mb-0 m-5" 
+          <button class="hovered p-2 mb-0 m-3" 
         style="border-width: 0px;
         border-radius: 5px;">
-         SUBJECTS
+         <i class="bi bi-arrow-left"></i>
         </button>
       </a>
       </a>
@@ -127,9 +127,9 @@
 
       <div class="conatiner">
         <div class="row d-flex justify-content-center">
-          <div class=" col-12 col-md-11 col-lg-9 card mt-5 mb-5">
+          <div class=" col-12 col-md-8 col-lg-9 card mt-5 mb-5">
           <div class="navbar d-flex justify-content-around">
-            <button class="nav-btn " data-target="notes">Notes</button>
+            <button class="nav-btn" data-target="notes" >Notes</button>
             <button class="nav-btn" data-target="overview">Overview</button> 
             <button class="nav-btn" data-target="Discussions">Discussions</button>
             <button class="nav-btn" data-target="Resources">Resources</button>
@@ -137,8 +137,9 @@
             </div>
           <hr style="margin-top:0px;"/>
 
-          <div id="notes" class="content text-center p-5">
-            <h2>This Is Notes</h2>
+          <div id="notes" class="content  p-5">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus suscipit placeat natus accusamus ullam dolore molestias perspiciatis. Sed consequatur fugiat odit neque id dolore, eius cupiditate magni voluptates ipsam doloribus tempore repudiandae perferendis accusantium, perspiciatis atque unde cum eos! Quos voluptates, nostrum placeat inventore, illo vel consequuntur corrupti quibusdam dolores eveniet asperiores eaque molestias ducimus aliquid dolorem fuga? Recusandae dolores magnam ullam, tenetur sed eum eius quas sint, veritatis alias a libero, nihil ut sunt eaque perspiciatis eveniet quasi iure nobis cumque facere iusto porro nam? Iure autem impedit possimus harum debitis. Similique omnis quaerat eveniet beatae hic possimus adipisci.</p>
+            <p>Medicine, a multifaceted discipline, encompasses the art and science of healing, maintaining health, and preventing diseases. Rooted in centuries of accumulated knowledge and propelled by contemporary advancements, medicine blends biology, chemistry, pharmacology, and technology to diagnose, treat, and cure ailments. From ancient herbal remedies to cutting-edge gene therapies, its evolution mirrors humanity's quest for understanding and conquering illness. Physicians, nurses, researchers, and healthcare professionals dedicate themselves to the pursuit of alleviating suffering and improving quality of life. In a world marked by diverse health challenges, medicine stands as a beacon of hope, continuously striving to enhance well-being and extend the boundaries of possibility.</p>
           </div>
 
           
@@ -228,16 +229,16 @@
                 <div class="row">
                   <div class="col-12  mb-3 ">
                     <div class="card shadow p-3  hovered">
-                      <div class="d-flex justify-content-between hovered" style="align-items: center;">
-                        <div class="d-flex flex-column text-start">
-                        <p><strong>Textbook of surgery :</strong> The biological basis of modern surgical practice 21st Edition </p>
+                          <div class=" text-center">  
+                        <h1 class="text-center">Textbook of surgery</h1>
+                         <p> <strong> The biological basis of modern surgical practice 21st Edition </strong></p>
+                       
+                        <div class="d-flex justify-content-between">
                         <p><strong>Authors : </strong> TOWNSEND
-                          BEAUCHAMP, EVERS, MATTOX | <strong>Pages :</strong> 2197</p>
+                          BEAUCHAMP, EVERS, MATTOX </p>
+                           <p><strong>Pages :</strong> 2197</p>
                         </div>
-                          <div>
-                            <i class="bi bi-chevron-right" style="color:grey;"></i>
-                          </div>  
-                        </div>
+                      </div>
                     </div>
                   </div>
                     </div>
@@ -285,9 +286,10 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('notes').classList.add('active');
-
-  document.querySelectorAll('.nav-btn').forEach(button => {
+  let navButton = document.querySelectorAll('.nav-btn');
+  navButton.forEach(button => {
     button.addEventListener('click', function() {
+      navButton.classList.add('activ');
       const target = this.getAttribute('data-target');
       document.querySelectorAll('.content').forEach(content => {
         content.classList.remove('active');
@@ -297,15 +299,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-document.querySelectorAll('.nav-btn').forEach(button => {
-      button.addEventListener('click', function() {
-        const target = this.getAttribute('data-target');
-        document.querySelectorAll('.content').forEach(content => {
-          content.classList.remove('active');
-        });
-        document.getElementById(target).classList.add('active');
-      });
-    });
 
 </script>
 

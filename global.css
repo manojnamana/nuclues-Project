@@ -1,8 +1,4 @@
 
-.card-img-top{
-    height: 200px;
-
-  }
 ::after,
 ::before {
 box-sizing: border-box;
@@ -168,9 +164,6 @@ transform: rotate(45deg);
 transition: all .2s ease-in;
 }
 
-.searchInput{
-width:100%;
-}
 
 @media (max-width: 799px) {
 
@@ -178,18 +171,6 @@ width:100%;
     display: flex;
     flex-direction: column;
 }
-}
-
-.dropdown-content {
-display: none;
-max-height: 0;
-overflow: hidden;
-transition: max-height 0.3s ease-in-out;
-}
-
-.dropdown-content.show {
-display: block;
-max-height: 100vh; /* Adjust according to your content height */
 
 }
 
@@ -238,7 +219,6 @@ transition:0.3s
 .nav-btn:hover{
 background-color:black;
 color:white;
-
 
 }
 
@@ -305,6 +285,19 @@ font-size:15px;
     }
 
 .hovered:hover{
-  background-color:#b3e6ff;
+  background-color:#007bff;
   color:white;
+}
+
+.hovered:hover p {
+  color:white;
+}
+
+.hovered:hover i {
+  color:white;
+}
+
+.activ {
+  background-color:black;
+color:white;
 }
