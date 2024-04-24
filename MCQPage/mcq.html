@@ -127,17 +127,29 @@
 
       <div class="conatiner">
         <div class="row d-flex justify-content-center">
-          <div class=" col-12 col-md-8 col-lg-9 card mt-5 mb-5">
-          <div class="navbar d-flex justify-content-around">
-            <button class="nav-btn" data-target="notes" >Notes</button>
-            <button class="nav-btn" data-target="overview">Overview</button> 
-            <button class="nav-btn" data-target="Discussions">Discussions</button>
-            <button class="nav-btn" data-target="Resources">Resources</button>
-            <button class="nav-btn" data-target="learning-tools">Learning Tools</button>
+          <div class=" col-12 col-md-8 col-lg-9  mt-5 mb-5">
+            <div class="card">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <button class="bg-transparent" style="border-width: 0px; "><a class="nav-link  active text-black" data-target="notes" >Notes</a></button>
+                </li>
+                <li class="nav-item">
+                  <button class="bg-transparent" style="border-width: 0px;"><a class="nav-link text-black" data-target="overview" >Overview</a></button>
+                </li>
+                <li class="nav-item">
+                  <button class="bg-transparent" style="border-width: 0px;"><a class="nav-link text-black" data-target="Discussions" >Discussions</a></button>
+                </li>
+                <li class="nav-item">
+                  <button class="bg-transparent" style="border-width: 0px;"><a class="nav-link text-black" data-target="Resources" >Resources</a></button>
+                </li>
+                <li class="nav-item">
+                  <button class="bg-transparent" style="border-width: 0px;"><a class="nav-link text-black" data-target="learning-tools" >Learning Tools</a></button>
+                </li>
+              </ul>
             </div>
-          <hr style="margin-top:0px;"/>
 
-          <div id="notes" class="content  p-5">
+          <div id="notes" class="content p-5" style="overflow-y: scroll;">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus suscipit placeat natus accusamus ullam dolore molestias perspiciatis. Sed consequatur fugiat odit neque id dolore, eius cupiditate magni voluptates ipsam doloribus tempore repudiandae perferendis accusantium, perspiciatis atque unde cum eos! Quos voluptates, nostrum placeat inventore, illo vel consequuntur corrupti quibusdam dolores eveniet asperiores eaque molestias ducimus aliquid dolorem fuga? Recusandae dolores magnam ullam, tenetur sed eum eius quas sint, veritatis alias a libero, nihil ut sunt eaque perspiciatis eveniet quasi iure nobis cumque facere iusto porro nam? Iure autem impedit possimus harum debitis. Similique omnis quaerat eveniet beatae hic possimus adipisci.</p>
             <p>Medicine, a multifaceted discipline, encompasses the art and science of healing, maintaining health, and preventing diseases. Rooted in centuries of accumulated knowledge and propelled by contemporary advancements, medicine blends biology, chemistry, pharmacology, and technology to diagnose, treat, and cure ailments. From ancient herbal remedies to cutting-edge gene therapies, its evolution mirrors humanity's quest for understanding and conquering illness. Physicians, nurses, researchers, and healthcare professionals dedicate themselves to the pursuit of alleviating suffering and improving quality of life. In a world marked by diverse health challenges, medicine stands as a beacon of hope, continuously striving to enhance well-being and extend the boundaries of possibility.</p>
           </div>
@@ -249,7 +261,7 @@
               <h2>This Is Learning Tools</h2>
             </div>
           
-            
+            </div>
           </div>
         </div>
       </div>
@@ -285,21 +297,34 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('notes').classList.add('active');
-  let navButton = document.querySelectorAll('.nav-btn');
+  document.getElementById('notes').classList.add('activ');
+  let navButton = document.querySelectorAll('.nav-link');
   navButton.forEach(button => {
     button.addEventListener('click', function() {
-      navButton.classList.add('activ');
       const target = this.getAttribute('data-target');
       document.querySelectorAll('.content').forEach(content => {
-        content.classList.remove('active');
+        content.classList.remove('activ');
       });
-      document.getElementById(target).classList.add('active');
+      document.getElementById(target).classList.add('activ');
     });
   });
+
 });
+</script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll('.nav-link');
 
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        buttons.forEach(btn => {
+          btn.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+  });
 </script>
 
 <script>
