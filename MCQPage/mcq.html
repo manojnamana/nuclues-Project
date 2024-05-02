@@ -104,12 +104,12 @@
             </div>
             
             <div class="d-flex justify-content-between">
-            <button type="submit" class="btn btn-primary mt-4 " style="width:15%; height:40px;" >Submit</button>
-            <button type="submit" class="btn  mt-4 " style="width:15%; height:40px; border-color: rgb(227, 227, 227);" onclick="onSelectImportant()" id="important">
+            <button type="submit" class="btn btn-primary mt-4 "  >Submit</button>
+            <button type="submit" class="btn  mt-4 " style="border-color: rgb(227, 227, 227);" onclick="onSelectImportant()" id="important">
               <i class="bi bi-bookmark"></i>  Important</button>
-            <button type="submit" class="btn  mt-4 " style="width:15%; height:40px; border-color: rgb(227, 227, 227);" onclick="onSelectStar()" id="star">
+            <button type="submit" class="btn  mt-4 " style="border-color: rgb(227, 227, 227);" onclick="onSelectStar()" id="star">
               <i class="bi bi-star" ></i>  Star</button>
-            <button type="submit" class="btn  mt-4 " style="width:15%; height:40px; border-color: rgb(227, 227, 227);" onclick="onSelectDoubt()" id="doubt">
+            <button type="submit" class="btn  mt-4 " style="border-color: rgb(227, 227, 227);" onclick="onSelectDoubt()" id="doubt">
               <i class="bi bi-question-circle "></i>  Doubt</button>
             </div>
 
@@ -330,10 +330,12 @@ document.addEventListener('DOMContentLoaded', function() {
      StarBtnElement.classList.remove('text-white')
      DoubtBtnElement.classList.remove('bg-danger')
      DoubtBtnElement.classList.remove('text-white')
-     if (ImportantBtnElement.innerText === "Remove Imp") {
+     StarBtnElement.innerHTML ='<i class="bi bi-star"></i> Star'
+     DoubtBtnElement.innerHTML ='<i class="bi bi-question-circle"></i> Doubt'
+     if (ImportantBtnElement.innerText === "Remove Important") {
       ImportantBtnElement.innerHTML ='<i class="bi bi-bookmark"></i> Important'
     } else {
-      ImportantBtnElement.innerText = "Remove Imp"
+      ImportantBtnElement.innerText = "Remove Important"
     }
   }
   function onSelectStar(){
@@ -343,6 +345,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ImportantBtnElement.classList.remove('text-white')
     DoubtBtnElement.classList.remove('bg-danger')
     DoubtBtnElement.classList.remove('text-white')
+    ImportantBtnElement.innerHTML ='<i class="bi bi-bookmark"></i> Important'
     if (StarBtnElement.innerText === "Remove Star") {
       StarBtnElement.innerHTML ='<i class="bi bi-star"></i> Star'
     } else {
@@ -356,6 +359,8 @@ document.addEventListener('DOMContentLoaded', function() {
     StarBtnElement.classList.remove('text-white')
     ImportantBtnElement.classList.remove('bg-info')
     ImportantBtnElement.classList.remove('text-white')
+    ImportantBtnElement.innerHTML ='<i class="bi bi-bookmark"></i> Important'
+    StarBtnElement.innerHTML ='<i class="bi bi-star"></i> Star'
     if (DoubtBtnElement.innerText === "Remove Doubt") {
       DoubtBtnElement.innerHTML ='<i class="bi bi-question-circle"></i> Doubt'
     } else {

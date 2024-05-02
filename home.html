@@ -61,11 +61,17 @@
     </aside>
         <div class="main">
           <div class="text-center">
-            <h1 class="mt-5 mb-5">Welcome To Nucleus !</h1>
+            
+            <div class="row d-flex justify-content-center">
+            <div class="col-lg-10 card mt-5 mb-5 p-3">
+            <h1 class="p-2">Hello Manoj</h1>
+            <h1 class="">Welcome To Nucleus !</h1>
+          </div>
+          </div>
 
             <div class="conatienr">
               <div class="row  d-flex justify-content-center">
-                <div class="col-lg-6">
+                <div class="col-lg-11">
                   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -176,12 +182,13 @@
     }
     else if (selectAnswer.value === "optionD"){
       console.log("correct")
-      mcqIds.style.display="none"
        correct.textContent="Correct Answer !"
+       wrong.textContent=""
+     rightAnswer.textContent=""
     }
     else{
       console.log("wrong")
-      mcqIds.style.display="none"
+      correct.textContent=""
        wrong.textContent="Wrong Answer !"
      rightAnswer.textContent="Transmitting electrical signals between nerve cells - Option D"
     }
