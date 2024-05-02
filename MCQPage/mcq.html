@@ -104,19 +104,13 @@
             </div>
             
             <div class="d-flex justify-content-between">
-            <button type="submit" class="btn btn-primary mt-4">Submit answer</button>
-            
-
-              <div class="popover mt-4 ">
-                <button class="popover-btn btn hovered"><i class="bi bi-bookmark "></i> Bookmark</button>
-                <div class="popover-content">
-                  <ul>
-                    <li data-value="Important">Important</li>
-                    <li data-value="Star">Star</li>
-                    <li data-value="Doubt">Doubt</li>
-                  </ul>
-                </div>
-              </div>
+            <button type="submit" class="btn btn-primary mt-4 " style="width:15%; height:40px;" >Submit</button>
+            <button type="submit" class="btn  mt-4 " style="width:15%; height:40px; border-color: rgb(227, 227, 227);" onclick="onSelectImportant()" id="important">
+              <i class="bi bi-bookmark"></i>  Important</button>
+            <button type="submit" class="btn  mt-4 " style="width:15%; height:40px; border-color: rgb(227, 227, 227);" onclick="onSelectStar()" id="star">
+              <i class="bi bi-star" ></i>  Star</button>
+            <button type="submit" class="btn  mt-4 " style="width:15%; height:40px; border-color: rgb(227, 227, 227);" onclick="onSelectDoubt()" id="doubt">
+              <i class="bi bi-question-circle "></i>  Doubt</button>
             </div>
 
             
@@ -326,22 +320,52 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-  var popoverBtn = document.querySelector('.popover-btn');
-  var popoverContent = document.querySelector('.popover-content');
+  var ImportantBtnElement = document.getElementById('important')
+  var StarBtnElement = document.getElementById('star')
+  var DoubtBtnElement = document.getElementById('doubt')
+  function onSelectImportant(){
+     ImportantBtnElement.classList.toggle('bg-info')
+     ImportantBtnElement.classList.toggle('text-white')
+     StarBtnElement.classList.remove('bg-warning')
+     StarBtnElement.classList.remove('text-white')
+     DoubtBtnElement.classList.remove('bg-danger')
+     DoubtBtnElement.classList.remove('text-white')
+     if (ImportantBtnElement.innerText === "Remove Imp") {
+      ImportantBtnElement.innerHTML ='<i class="bi bi-bookmark"></i> Important'
+    } else {
+      ImportantBtnElement.innerText = "Remove Imp"
+    }
+  }
+  function onSelectStar(){
+    StarBtnElement.classList.toggle('bg-warning')
+    StarBtnElement.classList.toggle('text-white')
+    ImportantBtnElement.classList.remove('bg-info')
+    ImportantBtnElement.classList.remove('text-white')
+    DoubtBtnElement.classList.remove('bg-danger')
+    DoubtBtnElement.classList.remove('text-white')
+    if (StarBtnElement.innerText === "Remove Star") {
+      StarBtnElement.innerHTML ='<i class="bi bi-star"></i> Star'
+    } else {
+      StarBtnElement.innerText = "Remove Star"
+    }
+  }
+  function onSelectDoubt(){
+    DoubtBtnElement.classList.toggle('bg-danger')
+    DoubtBtnElement.classList.toggle('text-white')
+    StarBtnElement.classList.remove('bg-warning')
+    StarBtnElement.classList.remove('text-white')
+    ImportantBtnElement.classList.remove('bg-info')
+    ImportantBtnElement.classList.remove('text-white')
+    if (DoubtBtnElement.innerText === "Remove Doubt") {
+      DoubtBtnElement.innerHTML ='<i class="bi bi-question-circle"></i> Doubt'
+    } else {
+      DoubtBtnElement.innerText = "Remove Doubt"
+    }
 
-  popoverBtn.addEventListener('click', function() {
-    popoverContent.style.display = popoverContent.style.display === 'block' ? 'none' : 'block';
-  });
-
-  var popoverOptions = document.querySelectorAll('.popover-content ul li');
-  popoverOptions.forEach(function(option) {
-    option.addEventListener('click', function() {
-      popoverContent.style.display = 'none';
-    });
-  });
-});
-
+  }
+    
+  
+  
 </script>
 
 </body>
