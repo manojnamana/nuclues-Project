@@ -12,7 +12,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </head>
 <body>
   <div class="wrapper">
@@ -105,12 +104,12 @@
             
             <div class="d-flex justify-content-between">
             <button type="submit" class="btn btn-primary mt-4 "  >Submit</button>
-            <button type="submit" class="btn  mt-4 " style="border-color: rgb(227, 227, 227);" onclick="onSelectImportant()" id="important">
+            <button type="submit" class="btn  mt-4 " style="border-color: #007bff" onclick="onSelectImportant()" id="important">
               <i class="bi bi-bookmark"></i>  Important</button>
-            <button type="submit" class="btn  mt-4 " style="border-color: rgb(227, 227, 227);" onclick="onSelectStar()" id="star">
+            <button type="submit" class="btn  mt-4 " style="border-color: #007bff" onclick="onSelectStar()" id="star">
               <i class="bi bi-star" ></i>  Star</button>
-            <button type="submit" class="btn  mt-4 " style="border-color: rgb(227, 227, 227);" onclick="onSelectDoubt()" id="doubt">
-              <i class="bi bi-question-circle "></i>  Doubt</button>
+            <button type="submit" class="btn  mt-4 " style="border-color: #007bff" onclick="onSelectDoubt()" id="doubt">
+              <i class="bi bi-question-circle"></i> Doubt</button>
             </div>
 
             
@@ -143,8 +142,8 @@
               </ul>
             </div>
 
-          <div id="notes" class="content p-5" style="overflow-y: scroll;">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus suscipit placeat natus accusamus ullam dolore molestias perspiciatis. Sed consequatur fugiat odit neque id dolore, eius cupiditate magni voluptates ipsam doloribus tempore repudiandae perferendis accusantium, perspiciatis atque unde cum eos! Quos voluptates, nostrum placeat inventore, illo vel consequuntur corrupti quibusdam dolores eveniet asperiores eaque molestias ducimus aliquid dolorem fuga? Recusandae dolores magnam ullam, tenetur sed eum eius quas sint, veritatis alias a libero, nihil ut sunt eaque perspiciatis eveniet quasi iure nobis cumque facere iusto porro nam? Iure autem impedit possimus harum debitis. Similique omnis quaerat eveniet beatae hic possimus adipisci.</p>
+          <div id="notes" class="content p-5">
+            <p style="overflow-y: scroll;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus suscipit placeat natus accusamus ullam dolore molestias perspiciatis. Sed consequatur fugiat odit neque id dolore, eius cupiditate magni voluptates ipsam doloribus tempore repudiandae perferendis accusantium, perspiciatis atque unde cum eos! Quos voluptates, nostrum placeat inventore, illo vel consequuntur corrupti quibusdam dolores eveniet asperiores eaque molestias ducimus aliquid dolorem fuga? Recusandae dolores magnam ullam, tenetur sed eum eius quas sint, veritatis alias a libero, nihil ut sunt eaque perspiciatis eveniet quasi iure nobis cumque facere iusto porro nam? Iure autem impedit possimus harum debitis. Similique omnis quaerat eveniet beatae hic possimus adipisci.</p>
             <p>Medicine, a multifaceted discipline, encompasses the art and science of healing, maintaining health, and preventing diseases. Rooted in centuries of accumulated knowledge and propelled by contemporary advancements, medicine blends biology, chemistry, pharmacology, and technology to diagnose, treat, and cure ailments. From ancient herbal remedies to cutting-edge gene therapies, its evolution mirrors humanity's quest for understanding and conquering illness. Physicians, nurses, researchers, and healthcare professionals dedicate themselves to the pursuit of alleviating suffering and improving quality of life. In a world marked by diverse health challenges, medicine stands as a beacon of hope, continuously striving to enhance well-being and extend the boundaries of possibility.</p>
           </div>
 
@@ -324,48 +323,47 @@ document.addEventListener('DOMContentLoaded', function() {
   var StarBtnElement = document.getElementById('star')
   var DoubtBtnElement = document.getElementById('doubt')
   function onSelectImportant(){
-     ImportantBtnElement.classList.toggle('bg-info')
-     ImportantBtnElement.classList.toggle('text-white')
-     StarBtnElement.classList.remove('bg-warning')
-     StarBtnElement.classList.remove('text-white')
-     DoubtBtnElement.classList.remove('bg-danger')
-     DoubtBtnElement.classList.remove('text-white')
-     StarBtnElement.innerHTML ='<i class="bi bi-star"></i> Star'
-     DoubtBtnElement.innerHTML ='<i class="bi bi-question-circle"></i> Doubt'
-     if (ImportantBtnElement.innerText === "Remove Important") {
-      ImportantBtnElement.innerHTML ='<i class="bi bi-bookmark"></i> Important'
-    } else {
-      ImportantBtnElement.innerText = "Remove Important"
+    if (ImportantBtnElement.innerHTML=== '<i class="bi bi-bookmark"></i> Important'){
+      ImportantBtnElement.innerHTML = '<i class="bi bi-bookmark-fill"></i> Important'
+      ImportantBtnElement.classList.add('bookmark')
+    }else{
+      ImportantBtnElement.innerHTML = '<i class="bi bi-bookmark"></i> Important'
+      ImportantBtnElement.classList.remove('bookmark')
     }
+
+    StarBtnElement.innerHTML ='<i class="bi bi-star"></i> Star'
+    DoubtBtnElement.innerHTML ='<i class="bi bi-question-circle"></i> Doubt'
+    StarBtnElement.classList.remove('bookmark')
+    DoubtBtnElement.classList.remove('bookmark')
   }
   function onSelectStar(){
-    StarBtnElement.classList.toggle('bg-warning')
-    StarBtnElement.classList.toggle('text-white')
-    ImportantBtnElement.classList.remove('bg-info')
-    ImportantBtnElement.classList.remove('text-white')
-    DoubtBtnElement.classList.remove('bg-danger')
-    DoubtBtnElement.classList.remove('text-white')
-    ImportantBtnElement.innerHTML ='<i class="bi bi-bookmark"></i> Important'
-    if (StarBtnElement.innerText === "Remove Star") {
-      StarBtnElement.innerHTML ='<i class="bi bi-star"></i> Star'
-    } else {
-      StarBtnElement.innerText = "Remove Star"
+    if (StarBtnElement.innerHTML=== '<i class="bi bi-star"></i> Star'){
+      StarBtnElement.innerHTML = '<i class="bi bi-star-fill"></i> Star'
+      StarBtnElement.classList.add('bookmark')
+    }else{
+      StarBtnElement.innerHTML = '<i class="bi bi-star"></i> Star'
+      StarBtnElement.classList.remove('bookmark')
     }
+    
+    DoubtBtnElement.innerHTML ='<i class="bi bi-question-circle"></i> Doubt'
+    ImportantBtnElement.innerHTML = '<i class="bi bi-bookmark"></i> Important'
+    ImportantBtnElement.classList.remove('bookmark')
+    DoubtBtnElement.classList.remove('bookmark')
+    
   }
   function onSelectDoubt(){
-    DoubtBtnElement.classList.toggle('bg-danger')
-    DoubtBtnElement.classList.toggle('text-white')
-    StarBtnElement.classList.remove('bg-warning')
-    StarBtnElement.classList.remove('text-white')
-    ImportantBtnElement.classList.remove('bg-info')
-    ImportantBtnElement.classList.remove('text-white')
-    ImportantBtnElement.innerHTML ='<i class="bi bi-bookmark"></i> Important'
-    StarBtnElement.innerHTML ='<i class="bi bi-star"></i> Star'
-    if (DoubtBtnElement.innerText === "Remove Doubt") {
-      DoubtBtnElement.innerHTML ='<i class="bi bi-question-circle"></i> Doubt'
-    } else {
-      DoubtBtnElement.innerText = "Remove Doubt"
+    if (DoubtBtnElement.innerHTML=== '<i class="bi bi-question-circle"></i> Doubt'){
+      DoubtBtnElement.innerHTML = '<i class="bi bi-question-circle-fill"></i> Doubt'
+      DoubtBtnElement.classList.add('bookmark')
+    }else{
+      DoubtBtnElement.innerHTML = '<i class="bi bi-question-circle"></i> Doubt'
+      DoubtBtnElement.classList.remove('bookmark')
     }
+    
+    StarBtnElement.innerHTML = '<i class="bi bi-star"></i> Star'
+    ImportantBtnElement.innerHTML = '<i class="bi bi-bookmark"></i> Important'
+    ImportantBtnElement.classList.remove('bookmark')
+    StarBtnElement.classList.remove('bookmark')
 
   }
     
