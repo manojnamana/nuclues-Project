@@ -64,7 +64,7 @@
   </aside>
     <div class="main">
       <div class="">
-        <a href="/subjects.html">
+        <a href="/topics.html">
           <button class="hovered p-2 mb-0 m-3" 
         style="border-width: 0px;
         border-radius: 5px;">
@@ -77,13 +77,27 @@
         <div class="row d-flex justify-content-center">
           <div class="col-12 col-md-9 col-lg-10">
             <div class="d-flex justify-content-between shadow mt-3 p-2 pb-1" style="align-items: center;"> 
+              <div class="d-flex" style="align-items: center;">
               <button class="hovered mt-1 p-2 hovered btn mb-2" style="width:100px; border-color: rgb(227, 227, 227);">
-                Prev
+                Prev 
               </button>
-              <p class="pt-1">Question 1 of 20 </p>
+              <p class=" m-3">Question 1 of 20 </p>
+              </div>
+              <div class="d-flex" style="align-items: center;">
+                <button class=" p-2  mt-3 mb-3"  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Bookmark"
+        style="border-width: 0px;
+        background-color: transparent;">
+         <i class="bi bi-bookmark"></i>
+                </button>
+                <button class=" p-2  m-3"  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Revise"
+        style="border-width: 0px;
+       background-color: transparent;">
+         <i class="bi bi-flag"></i>
+                </button>
               <button  class="mt-1 mb-2 hovered btn p-2 text-center" style= "width:100px; border-color: rgb(227, 227, 227);">
                 Next
               </button>
+              </div>
             </div>
             <p class="pt-3" >Which one of the following would cause a rise in the carbon monoxide transfer factor (TLCO)? </p>
             <div class="card mt-4">
@@ -102,7 +116,7 @@
               </li>
             </div>
             
-            <div class="d-flex justify-content-between">
+            <!-- <div class="d-flex justify-content-between">
             <button type="submit" class="btn btn-primary mt-4 "  >Submit</button>
             <button type="submit" class="btn  mt-4 " style="border-color: #007bff" onclick="onSelectImportant()" id="important">
               <i class="bi bi-bookmark"></i>  Important</button>
@@ -110,15 +124,14 @@
               <i class="bi bi-star" ></i>  Star</button>
             <button type="submit" class="btn  mt-4 " style="border-color: #007bff" onclick="onSelectDoubt()" id="doubt">
               <i class="bi bi-question-circle"></i> Doubt</button>
-            </div>
+            </div> -->
 
-            
           </div>
         </div>
         
       </div>
 
-      <div class="container">
+      <!-- <div class="container">
         <div class="row d-flex justify-content-center">
           <div class="col-12 col-md-9 col-lg-10 mt-5 mb-5">
             <div class="card">
@@ -255,7 +268,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
    
@@ -283,10 +296,8 @@
       });
     });
   </script>
-    <script>
 
-
-
+<!-- <script>
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('notes').classList.add('activ');
   let navButton = document.querySelectorAll('.nav-link');
@@ -301,9 +312,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 });
-</script>
+</script> -->
 
-<script>
+<!-- <script>
   document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll('.nav-link');
 
@@ -316,12 +327,14 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
-</script>
+</script> -->
 
-<script>
+<!-- <script>
   var ImportantBtnElement = document.getElementById('important')
   var StarBtnElement = document.getElementById('star')
   var DoubtBtnElement = document.getElementById('doubt')
+  var onclickValue = ImportantBtnElement.getAttribute('onclick');
+  console.log(onclickValue);
   function onSelectImportant(){
     if (ImportantBtnElement.innerHTML=== '<i class="bi bi-bookmark"></i> Important'){
       ImportantBtnElement.innerHTML = '<i class="bi bi-bookmark-fill"></i> Important'
@@ -366,10 +379,14 @@ document.addEventListener('DOMContentLoaded', function() {
     StarBtnElement.classList.remove('bookmark')
 
   }
-    
-  
-  
-</script>
 
+  
+</script> -->
+
+
+<script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
 </body>
 </html>
