@@ -301,7 +301,15 @@ font-size:15px;
 }
 
 
-.bookmark i{
-  color: rgba(245, 213, 4, 0.886);
+.hovered:hover button {
+  background-color:white;
+  color:#007bff;
 }
+
+
+/* .bookmark i{
+  color: rgba(245, 213, 4, 0.886);
+} */
+
+
 
